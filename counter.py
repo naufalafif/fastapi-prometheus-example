@@ -30,22 +30,26 @@ def index(req: Request):
 
 @app.get('/a')
 def urlb():
-  return "Counter Triggered"
+  return "Counter endpoint a Triggered"
 
 
 @app.get('/b')
 def urlb():
-  return "Counter Triggered"
+  return "Counter endpoint b Triggered"
 
 @app.middleware("http")
 async def triggered_counter(request: Request, call_next):
+    
+    # increase request total value
     REQUEST_TOTAL.inc()
     REQUEST_TOTAL_WITH_LABEL.labels(request.url.path).inc()
+
     response = await call_next(request)
     return response
 
 @app.on_event('startup')
 def startup_events():
+  # start prometheus server / metrics
   start_http_server(port=METRIC_PORT)
 
 
