@@ -8,10 +8,13 @@ Example Implementation of Prometheus Client on Fastapi Framework
 - [Histogram Example](histogram.py)
 
 ### How To Run
+using makefile
 - Counter : `make counter`
 - Gauge : `make counter`
 - Summary : `make counter`
 - Histogram : `make counter`
+
+or simply execute the python file. ex  : `python counter.py`
 
 App will run on port `8282`
 Metric exposed on port `8181`
