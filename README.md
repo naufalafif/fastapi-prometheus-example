@@ -10,9 +10,9 @@ Example Implementation of Prometheus Client on Fastapi Framework
 ### How To Run
 using makefile
 - Counter : `make counter`
-- Gauge : `make counter`
-- Summary : `make counter`
-- Histogram : `make counter`
+- Gauge : `make gauge`
+- Summary : `make summary`
+- Histogram : `make histogram`
 
 or simply execute the python file. ex  : `python counter.py`
 
