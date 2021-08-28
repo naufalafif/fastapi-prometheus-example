@@ -50,6 +50,7 @@ async def triggered_histogram(request: Request, call_next):
 
 @app.on_event('startup')
 def startup_events():
+  # start prometheus server / metrics
   start_http_server(port=METRIC_PORT)
 
 
